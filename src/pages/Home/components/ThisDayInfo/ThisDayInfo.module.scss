@@ -1,0 +1,52 @@
+@import '../../../../styles/variables';
+
+.this_day_info {
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  padding: 40px 30px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  background: var(#{--components-background-default});
+}
+
+.cloud {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.this_day_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  .indicator {
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $box-shadow;
+    margin-right: 20px;
+  }
+  .indicator_name,  .indicator_value{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .indicator_name{
+    margin-right: 20px;
+    width: 100px;
+    color:$base-color;
+  }
+  .indicator_value{
+    color: var(#{ --text-color-default});
+  }
+  &:last-child{
+    margin-bottom: 0px;
+  }
+}
+
+

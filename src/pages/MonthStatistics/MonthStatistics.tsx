@@ -1,12 +1,12 @@
 import React from 'react';
-import s from '../Home/Home.module.scss';
+import s from './MonthStatistics.module.scss';
 
 type Props = {}
 
-const Home = (props: Props) => {
+const MonthStatistics = (props: Props) => {
     return (
-        <div className={s.home}> Home</div>
+        <div className={s.monthStatistics}> MonthStatistics</div>
     )
 }
 
-export default Home
+export default MonthStatistics

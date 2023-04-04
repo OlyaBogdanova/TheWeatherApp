@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.title{
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  color: $primary-color;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+}
+.logo{
+  margin-right: 20px;
+  svg{
+    width: 65px;
+    height: 65px;
+  }
+}
+.change_theme{
+  margin-right: 20px;
+  cursor: pointer;
+}
