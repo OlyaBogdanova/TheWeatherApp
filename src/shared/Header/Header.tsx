@@ -11,8 +11,8 @@ const Header = (props: Props) => {
     const {theme, changeTheme}=useContext(ThemeContext)
 
     const options = [
-        {value: 'city-1', label: 'Санкт-Петербург'},
-        {value: 'city-2', label: 'Москва'},
+        {value: 'city-1', label: 'Москва'},
+        {value: 'city-2', label: 'Санкт-Петербург'},
         {value: 'city-3', label: 'Вологда'}
     ]
 
@@ -29,7 +29,12 @@ const Header = (props: Props) => {
         singleValue: (styles: any) => ({
             ...styles,
             color: theme === Theme.DARK ? '#fff' : '#000',
-        })
+        }),
+        menuList:(styles: any) => ({
+            ...styles,
+            backgroundColor: theme === Theme.DARK  ? '#4F4F4F' : '#fff',
+            color:  theme === Theme.DARK ? '#fff' : '#000'
+        }),
     }
 
     function changeThemeComponent() {
