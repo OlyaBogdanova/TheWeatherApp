@@ -2,7 +2,9 @@ import {createContext} from 'react';
 
 interface Props {
     theme: Theme,
-    changeTheme: (theme: Theme) => void;
+    changeTheme: (theme: Theme) => void,
+    city:string,
+    changeCity: (e: any) => void,
 }
 
 export enum Theme {
@@ -13,5 +15,8 @@ export enum Theme {
 export const ThemeContext = createContext<Props>({
     theme: Theme.LIGHT,
     changeTheme: (theme) => {
-    }
+    },
+    city:'',
+    changeCity:()=>{}
+
 })

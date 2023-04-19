@@ -8,7 +8,12 @@ export type Weather = {
         speed:number,
         deg:number,
         gust:number
-    }
+    },
+    weather:[{
+        icon:string,
+        id:number
+    }]
+
 
 }
 export type Coords = {

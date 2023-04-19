@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import s from './Header.module.scss';
 import GlobalSvgSelector from "../../assets/icons/global/GlobalSvgSelector";
 import Select from 'react-select'
@@ -8,12 +8,13 @@ import {Theme} from "../../context/ThemeContext";
 type Props = {}
 
 const Header = (props: Props) => {
-    const {theme, changeTheme}=useContext(ThemeContext)
+    const {theme, changeTheme, changeCity} = useContext(ThemeContext)
+    const [city, setCity] = useState('')
 
     const options = [
-        {value: 'city-1', label: 'Москва'},
-        {value: 'city-2', label: 'Санкт-Петербург'},
-        {value: 'city-3', label: 'Вологда'}
+        {value: 'moskwa', label: 'Москва'},
+        {value: 'saint-peterburg', label: 'Санкт-Петербург'},
+        {value: 'vologda', label: 'Вологда'}
     ]
 
     const colourStyles = {
@@ -30,16 +31,18 @@ const Header = (props: Props) => {
             ...styles,
             color: theme === Theme.DARK ? '#fff' : '#000',
         }),
-        menuList:(styles: any) => ({
+        menuList: (styles: any) => ({
             ...styles,
-            backgroundColor: theme === Theme.DARK  ? '#4F4F4F' : '#fff',
-            color:  theme === Theme.DARK ? '#fff' : '#000'
+            backgroundColor: theme === Theme.DARK ? '#4F4F4F' : '#fff',
+            color: theme === Theme.DARK ? '#fff' : '#000'
         }),
     }
 
     function changeThemeComponent() {
-       changeTheme(theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT)
+        changeTheme(theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT)
     }
+
+
 
     return (
         <header className={s.header}>
@@ -54,7 +57,15 @@ const Header = (props: Props) => {
                     <GlobalSvgSelector id='change_theme'/>
                 </div>
                 <div>
-                    <Select defaultValue={options[0]} options={options} styles={colourStyles}/>
+                    <Select
+                        defaultValue={options[0]}
+                        options={options}
+                        styles={colourStyles}
+                        closeMenuOnScroll={(e) => true}
+                        onChange={(e) => changeCity(e)}
+
+
+                    />
                 </div>
             </div>
         </header>
